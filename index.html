@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A visual forecast for better aircraft spotting." />
+    <title>Spotter's Forecast</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Spotter's Forecast home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Spotter’s Forecast</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#forecast">Forecast</a>
+        <a href="#arrivals">Arrivals</a>
+        <a href="#guide">Spotting guide</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">AVIATION WEATHER, MADE USEFUL</p>
+        <h1 id="hero-title">Know when to look up.</h1>
+        <p class="hero-copy">A clear, local forecast for plane spotters: aircraft activity, runway direction, light, clouds, and the best window to go.</p>
+        <form class="airport-picker" id="airport-form">
+          <label class="sr-only" for="airport">Airport</label>
+          <span aria-hidden="true">⌖</span>
+          <select id="airport" name="airport">
+            <option value="JFK">New York · JFK</option>
+            <option value="LAX">Los Angeles · LAX</option>
+            <option value="ORD">Chicago · O’Hare</option>
+          </select>
+          <button type="submit">See forecast <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="data-note" id="data-note">Live ADS-B positions, no account required.</p>
+      </section>
+
+      <section class="forecast-section" id="forecast" aria-labelledby="forecast-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY AT <span id="airport-code">JFK</span></p>
+            <h2 id="forecast-title">Your next great spotting window</h2>
+          </div>
+          <p class="updated" id="updated-time">Updated just now</p>
+        </div>
+
+        <article class="spotlight-card">
+          <div class="spotlight-copy">
+            <p class="status"><span class="status-dot"></span><span id="status-label">Excellent conditions</span></p>
+            <p class="time" id="best-window">3:40–6:10 PM</p>
+            <p class="summary" id="best-summary">Warm afternoon light, scattered clouds, and steady arrivals on the 22s make this the day’s best window.</p>
+            <div class="pills">
+              <span id="runway-pill">Runway 22L / 22R</span>
+              <span id="wind-pill">Wind SW 11 kt</span>
+              <span id="light-pill">Golden light</span>
+            </div>
+          </div>
+          <div class="score" aria-label="Spotting score 88 out of 100">
+            <span class="score-number" id="score-number">88</span>
+            <span>spotting score</span>
+          </div>
+        </article>
+
+        <div class="hour-grid" id="hour-grid" aria-label="Hourly spotting forecast"></div>
+      </section>
+
+      <section class="two-column" id="arrivals">
+        <div>
+          <p class="eyebrow">WHAT’S IN THE AIR</p>
+          <h2>Worth watching today</h2>
+          <p class="section-copy">A quick view of the aircraft types most likely to make an appearance.</p>
+          <div class="live-header"><span class="live-indicator" id="live-indicator"></span><span id="live-status">Demo aircraft list</span></div>
+          <div class="aircraft-list" id="aircraft-list"></div>
+        </div>
+        <div class="right-column">
+          <aside class="livery-note" aria-labelledby="livery-heading">
+            <p class="eyebrow">SPECIAL LIVERIES</p>
+            <h2 id="livery-heading">Paint worth chasing</h2>
+            <p id="livery-copy">Live matching begins when the FR24 connection is on.</p>
+            <div class="livery-list" id="livery-list"></div>
+          </aside>
+          <aside class="field-note" id="guide">
+            <p class="eyebrow">FIELD NOTE</p>
+            <h2 id="guide-title">Bayview Park</h2>
+            <p id="guide-copy">The afternoon favorite for arrivals. Face southwest for clean approach shots; bring a longer lens after 5 PM.</p>
+            <div class="guide-meta">
+              <span>◷ <strong id="walk-time">8 min walk</strong></span>
+              <span>☀ <strong id="sun-direction">Sun behind you</strong></span>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>Built for people who still look up. Live position data: ADSB.lol contributors.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
